@@ -162,12 +162,6 @@ const ProfileScreen = () => {
   return (
     <View style={[styles.container, { backgroundColor: theme.background }]}>
 
-      <ImageViewing
-        images={[{ uri: imageUrl ? imageUrl : '' }]}
-        visible={visible}
-        onRequestClose={() => setIsVisible(false)}
-      />
-
       <View
         style={[
           {
@@ -199,7 +193,7 @@ const ProfileScreen = () => {
         <View style={[styles.profileCard, { backgroundColor: theme.card }]}>
           <View style={styles.imageContainer}>
 
-            <TouchableOpacity onPress={() => imageUrl && setIsVisible(true)} activeOpacity={0.9}>
+            <TouchableOpacity activeOpacity={0.9}>
               {imageUrl ? (
                 <Image source={{ uri: imageUrl }} style={styles.profileImage} resizeMode="cover" />
               ) : (
